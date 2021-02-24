@@ -81,6 +81,17 @@ const Contains = () => {
       return !nonUppercaseLetterFound;
    };
    
+   const specialCharacters = (string = '', ignoredCharacters = []) => {
+      allow.aString(string).anArrayOfStrings(ignoredCharacters);
+      let specialCharacterFound = false;
+      string.split('').forEach(character => {
+         if (specialCharacterFound || ignoredCharacters.includes(character))
+            return;
+         specialCharacterFound = !alphanumerics(character);
+      });
+      return specialCharacterFound;
+   };
+   
    const uppercaseLetters = (string = '') => {
       allow.aString(string);
       if (!letters(string))
@@ -98,6 +109,7 @@ const Contains = () => {
       onlyLowercaseLetters,
       onlyNumbers,
       onlyUppercaseLetters,
+      specialCharacters,
       uppercaseLetters,
    };
 };

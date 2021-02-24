@@ -3,8 +3,13 @@
   "version": "0.0.1",
   "description": "A string-inspection utility that is mindful of international (i.e. non-ASCII) letters",
   "keywords": [
-    "local storage",
-    "localStorage",
+    "string",
+    "validation",
+    "contains",
+    "internationalization",
+    "translation",
+    "i18n",
+    "foreign characters",
     "javascript"
   ],
   "homepage": "https://github.com/bytebodger/string-contains",
