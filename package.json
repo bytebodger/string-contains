@@ -12,7 +12,7 @@
     "email": "adam.davis@hashverify.com",
     "url": "https://github.com/bytebodger/string-contains/issues"
   },
-  "main": "src/string.contains.js",
+  "main": "src/contains.js",
   "scripts": {
     "test": "jest --transformIgnorePatterns \"node_modules/(?!@toolz/string-contains)/\" --env=jsdom"
   },
