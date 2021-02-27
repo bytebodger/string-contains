@@ -46,7 +46,7 @@ But its proper spelling is
 
 > Lindström
 
-English speakers may assume that there is no harm in forcing someone with the name of "Núñez" as "Nunez". But these discrepancies can have systemic effects.
+English speakers may assume that there is no harm in forcing someone with the name of "Núñez" to enter their name as "Nunez". But aside from being potentially discriminatory, these discrepancies can have systemic effects.
 
 For example, it is perfectly valid (albeit, rare) to have non-ASCII values in an email address. So if someone's email address is núñez@somedomain.com, and your validation scripts reject any email addresses with non-ASCII letters, the user would be faced with the choice to either A) enter a non-working email, just to pass the validation, or B) abandon the form altogether.
 

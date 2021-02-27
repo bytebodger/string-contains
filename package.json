@@ -1,6 +1,6 @@
 {
   "name": "@toolz/string-contains",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A string-inspection utility that is mindful of international (i.e. non-ASCII) letters",
   "keywords": [
     "string",
