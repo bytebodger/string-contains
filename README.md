@@ -46,6 +46,12 @@ But its proper spelling is
 
 > Lindström
 
+English speakers may assume that there is no harm in forcing someone with the name of "Núñez" as "Nunez". But these discrepancies can have systemic effects.
+
+For example, it is perfectly valid (albeit, rare) to have non-ASCII values in an email address. So if someone's email address is núñez@somedomain.com, and your validation scripts reject any email addresses with non-ASCII letters, the user would be faced with the choice to either A) enter a non-working email, just to pass the validation, or B) abandon the form altogether.
+
+Similarly, non-ASCII characters can absolutely be in domain names. So restricing non-ASCII characters may keep you from collecting the user's email address or the URL for their website.
+
 ## Methodology
 
 This utility works by checking characters against a far more expansive set of Regex patterns. These patterns identify the range of _letters_ that exist far outside the normal ASCII range. This, in turn, properly identifies letters from most languages.
