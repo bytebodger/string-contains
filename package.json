@@ -1,6 +1,6 @@
 {
   "name": "@toolz/string-contains",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A string-inspection utility that is mindful of international (i.e. non-ASCII) letters",
   "keywords": [
     "string",
@@ -32,7 +32,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@toolz/allow": "^1.0.4"
+    "@toolz/allow": "^1.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.0",
