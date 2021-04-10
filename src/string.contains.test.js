@@ -1,5 +1,6 @@
 import { contains } from './contains';
 
+const burmese = 'မြန်မာဘာသာ';
 const decimal = '3.14';
 const emptyString = '';
 const englishLetters = 'quick lazy fox';
@@ -15,10 +16,14 @@ const onlyRussianMixedcaseLetters = 'Быстраялениваялиса';
 const onlyRussianUppercaseLetters = 'БЫСТРЫЙЛЕНИВЫЙЛИС';
 const russianLetters = 'быстрый ленивый лис';
 const specialCharacters = `!@#$%^&*()+_{}[]|\\:";'<>?,./`;
+const umlautLowercase = 'lüdenscheid';
+const umlautMixedcase = 'Lüdenscheid';
+const umlautUppercase = 'LÜDENSCHEID';
 
 // alphanumerics()
 
 test('alphanumerics() returns TRUE for any value with alphanumerics', () => {
+   expect(contains.alphanumerics(burmese)).toEqual(true);
    expect(contains.alphanumerics(decimal)).toEqual(true);
    expect(contains.alphanumerics(englishLetters)).toEqual(true);
    expect(contains.alphanumerics(formattedDecimal)).toEqual(true);
@@ -33,6 +38,9 @@ test('alphanumerics() returns TRUE for any value with alphanumerics', () => {
    expect(contains.alphanumerics(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.alphanumerics(onlyRussianUppercaseLetters)).toEqual(true);
    expect(contains.alphanumerics(russianLetters)).toEqual(true);
+   expect(contains.alphanumerics(umlautLowercase)).toEqual(true);
+   expect(contains.alphanumerics(umlautMixedcase)).toEqual(true);
+   expect(contains.alphanumerics(umlautUppercase)).toEqual(true);
 });
 
 test('alphanumerics() returns FALSE for any value that contains no alphanumerics', () => {
@@ -43,6 +51,7 @@ test('alphanumerics() returns FALSE for any value that contains no alphanumerics
 // letters()
 
 test('letters() returns TRUE for any value with letters', () => {
+   expect(contains.letters(burmese)).toEqual(true);
    expect(contains.letters(englishLetters)).toEqual(true);
    expect(contains.letters(onlyEnglishLowercaseLetters)).toEqual(true);
    expect(contains.letters(onlyEnglishMixedcaseLetters)).toEqual(true);
@@ -51,6 +60,10 @@ test('letters() returns TRUE for any value with letters', () => {
    expect(contains.letters(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.letters(onlyRussianUppercaseLetters)).toEqual(true);
    expect(contains.letters(russianLetters)).toEqual(true);
+   expect(contains.letters(umlautLowercase)).toEqual(true);
+   expect(contains.letters(umlautMixedcase)).toEqual(true);
+   expect(contains.letters(umlautUppercase)).toEqual(true);
+   
 });
 
 test('letters() returns FALSE for any value that contains no letters', () => {
@@ -66,12 +79,15 @@ test('letters() returns FALSE for any value that contains no letters', () => {
 // lowercaseLetters()
 
 test('lowercaseLetters() returns TRUE for any value with lowercase letters', () => {
+   expect(contains.letters(burmese)).toEqual(true);
    expect(contains.lowercaseLetters(englishLetters)).toEqual(true);
    expect(contains.lowercaseLetters(onlyEnglishLowercaseLetters)).toEqual(true);
    expect(contains.lowercaseLetters(onlyEnglishMixedcaseLetters)).toEqual(true);
    expect(contains.lowercaseLetters(onlyRussianLowercaseLetters)).toEqual(true);
    expect(contains.lowercaseLetters(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.lowercaseLetters(russianLetters)).toEqual(true);
+   expect(contains.lowercaseLetters(umlautLowercase)).toEqual(true);
+   expect(contains.lowercaseLetters(umlautMixedcase)).toEqual(true);
 });
 
 test('lowercaseLetters() returns FALSE for any value that contains no lowercase letters', () => {
@@ -84,6 +100,7 @@ test('lowercaseLetters() returns FALSE for any value that contains no lowercase 
    expect(contains.lowercaseLetters(onlyEnglishUppercaseLetters)).toEqual(false);
    expect(contains.lowercaseLetters(onlyRussianUppercaseLetters)).toEqual(false);
    expect(contains.lowercaseLetters(specialCharacters)).toEqual(false);
+   expect(contains.lowercaseLetters(umlautUppercase)).toEqual(false);
 });
 
 // numbers()
@@ -97,6 +114,7 @@ test('numbers() returns TRUE for any value with numbers', () => {
 });
 
 test('numbers() returns FALSE for any value that contains no numbers', () => {
+   expect(contains.numbers(burmese)).toEqual(false);
    expect(contains.numbers(emptyString)).toEqual(false);
    expect(contains.numbers(englishLetters)).toEqual(false);
    expect(contains.numbers(onlyEnglishLowercaseLetters)).toEqual(false);
@@ -107,11 +125,15 @@ test('numbers() returns FALSE for any value that contains no numbers', () => {
    expect(contains.numbers(onlyRussianUppercaseLetters)).toEqual(false);
    expect(contains.numbers(russianLetters)).toEqual(false);
    expect(contains.numbers(specialCharacters)).toEqual(false);
+   expect(contains.numbers(umlautLowercase)).toEqual(false);
+   expect(contains.numbers(umlautMixedcase)).toEqual(false);
+   expect(contains.numbers(umlautUppercase)).toEqual(false);
 });
 
 // onlyAlphanumerics()
 
 test('onlyAlphanumerics() returns TRUE for any value that contains only alphanumerics', () => {
+   expect(contains.onlyAlphanumerics(burmese)).toEqual(true);
    expect(contains.onlyAlphanumerics(emptyString)).toEqual(true);
    expect(contains.onlyAlphanumerics(numbers)).toEqual(true);
    expect(contains.onlyAlphanumerics(onlyEnglishLowercaseLetters)).toEqual(true);
@@ -120,6 +142,9 @@ test('onlyAlphanumerics() returns TRUE for any value that contains only alphanum
    expect(contains.onlyAlphanumerics(onlyRussianLowercaseLetters)).toEqual(true);
    expect(contains.onlyAlphanumerics(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.onlyAlphanumerics(onlyRussianUppercaseLetters)).toEqual(true);
+   expect(contains.onlyAlphanumerics(umlautLowercase)).toEqual(true);
+   expect(contains.onlyAlphanumerics(umlautMixedcase)).toEqual(true);
+   expect(contains.onlyAlphanumerics(umlautUppercase)).toEqual(true);
 });
 
 test('onlyAlphanumerics() returns TRUE when non-alphanumerics are passed in ignoredCharacters[]', () => {
@@ -144,6 +169,7 @@ test('onlyAlphanumerics() returns FALSE for any value that contains any non-alph
 // onlyLetters()
 
 test('onlyLetters() returns TRUE for any value that contains only letters', () => {
+   expect(contains.onlyLetters(burmese)).toEqual(true);
    expect(contains.onlyLetters(emptyString)).toEqual(true);
    expect(contains.onlyLetters(onlyEnglishLowercaseLetters)).toEqual(true);
    expect(contains.onlyLetters(onlyEnglishMixedcaseLetters)).toEqual(true);
@@ -151,6 +177,9 @@ test('onlyLetters() returns TRUE for any value that contains only letters', () =
    expect(contains.onlyLetters(onlyRussianLowercaseLetters)).toEqual(true);
    expect(contains.onlyLetters(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.onlyLetters(onlyRussianUppercaseLetters)).toEqual(true);
+   expect(contains.onlyLetters(umlautLowercase)).toEqual(true);
+   expect(contains.onlyLetters(umlautMixedcase)).toEqual(true);
+   expect(contains.onlyLetters(umlautUppercase)).toEqual(true);
 });
 
 test('onlyLetters() returns TRUE when non-letters are passed in ignoredCharacters[]', () => {
@@ -175,6 +204,7 @@ test('onlyLowercaseLetters() returns TRUE for any value that contains only lower
    expect(contains.onlyLowercaseLetters(emptyString)).toEqual(true);
    expect(contains.onlyLowercaseLetters(onlyEnglishLowercaseLetters)).toEqual(true);
    expect(contains.onlyLowercaseLetters(onlyRussianLowercaseLetters)).toEqual(true);
+   expect(contains.onlyLowercaseLetters(umlautLowercase)).toEqual(true);
 });
 
 test('onlyLowercaseLetters() returns TRUE when non-lowercase letters are passed in ignoredCharacters[]', () => {
@@ -195,6 +225,8 @@ test('onlyLowercaseLetters() returns FALSE for any value that contains any non-l
    expect(contains.onlyLowercaseLetters(onlyRussianUppercaseLetters)).toEqual(false);
    expect(contains.onlyLowercaseLetters(russianLetters)).toEqual(false);
    expect(contains.onlyLowercaseLetters(specialCharacters)).toEqual(false);
+   expect(contains.onlyLowercaseLetters(umlautMixedcase)).toEqual(false);
+   expect(contains.onlyLowercaseLetters(umlautUppercase)).toEqual(false);
 });
 
 // onlyNumbers()
@@ -212,6 +244,7 @@ test('onlyNumbers() returns TRUE when non-numbers are passed in ignoredCharacter
 });
 
 test('onlyNumbers() returns FALSE for any value that contains any non-number', () => {
+   expect(contains.onlyNumbers(burmese)).toEqual(false);
    expect(contains.onlyNumbers(decimal)).toEqual(false);
    expect(contains.onlyNumbers(englishLetters)).toEqual(false);
    expect(contains.onlyNumbers(formattedDecimal)).toEqual(false);
@@ -225,6 +258,9 @@ test('onlyNumbers() returns FALSE for any value that contains any non-number', (
    expect(contains.onlyNumbers(onlyRussianUppercaseLetters)).toEqual(false);
    expect(contains.onlyNumbers(russianLetters)).toEqual(false);
    expect(contains.onlyNumbers(specialCharacters)).toEqual(false);
+   expect(contains.onlyNumbers(umlautLowercase)).toEqual(false);
+   expect(contains.onlyNumbers(umlautMixedcase)).toEqual(false);
+   expect(contains.onlyNumbers(umlautUppercase)).toEqual(false);
 });
 
 // onlyUppercaseLetters()
@@ -233,9 +269,11 @@ test('onlyUppercaseLetters() returns TRUE for any value that contains only upper
    expect(contains.onlyUppercaseLetters(emptyString)).toEqual(true);
    expect(contains.onlyUppercaseLetters(onlyEnglishUppercaseLetters)).toEqual(true);
    expect(contains.onlyUppercaseLetters(onlyRussianUppercaseLetters)).toEqual(true);
+   expect(contains.onlyUppercaseLetters(umlautUppercase)).toEqual(true);
 });
 
 test('onlyUppercaseLetters() returns FALSE for any value that contains any non-uppercase letter or non-letter', () => {
+   expect(contains.onlyUppercaseLetters(burmese)).toEqual(false);
    expect(contains.onlyUppercaseLetters(decimal)).toEqual(false);
    expect(contains.onlyUppercaseLetters(englishLetters)).toEqual(false);
    expect(contains.onlyUppercaseLetters(formattedDecimal)).toEqual(false);
@@ -248,6 +286,8 @@ test('onlyUppercaseLetters() returns FALSE for any value that contains any non-u
    expect(contains.onlyUppercaseLetters(onlyRussianMixedcaseLetters)).toEqual(false);
    expect(contains.onlyUppercaseLetters(russianLetters)).toEqual(false);
    expect(contains.onlyUppercaseLetters(specialCharacters)).toEqual(false);
+   expect(contains.onlyUppercaseLetters(umlautLowercase)).toEqual(false);
+   expect(contains.onlyUppercaseLetters(umlautMixedcase)).toEqual(false);
 });
 
 // specialCharacters()
@@ -268,6 +308,7 @@ test('specialCharacters() returns FALSE when non-special characters are passed i
 });
 
 test('specialCharacters() returns FALSE for any value that contains no non-alphanumerics', () => {
+   expect(contains.specialCharacters(burmese)).toEqual(false);
    expect(contains.specialCharacters(emptyString)).toEqual(false);
    expect(contains.specialCharacters(numbers)).toEqual(false);
    expect(contains.specialCharacters(onlyEnglishLowercaseLetters)).toEqual(false);
@@ -276,6 +317,9 @@ test('specialCharacters() returns FALSE for any value that contains no non-alpha
    expect(contains.specialCharacters(onlyRussianLowercaseLetters)).toEqual(false);
    expect(contains.specialCharacters(onlyRussianMixedcaseLetters)).toEqual(false);
    expect(contains.specialCharacters(onlyRussianUppercaseLetters)).toEqual(false);
+   expect(contains.specialCharacters(umlautLowercase)).toEqual(false);
+   expect(contains.specialCharacters(umlautMixedcase)).toEqual(false);
+   expect(contains.specialCharacters(umlautUppercase)).toEqual(false);
 });
 
 // uppercaseLetters()
@@ -285,9 +329,12 @@ test('uppercaseLetters() returns TRUE for any value with uppercase letters', () 
    expect(contains.uppercaseLetters(onlyEnglishUppercaseLetters)).toEqual(true);
    expect(contains.uppercaseLetters(onlyRussianMixedcaseLetters)).toEqual(true);
    expect(contains.uppercaseLetters(onlyRussianUppercaseLetters)).toEqual(true);
+   expect(contains.uppercaseLetters(umlautMixedcase)).toEqual(true);
+   expect(contains.uppercaseLetters(umlautUppercase)).toEqual(true);
 });
 
 test('uppercaseLetters() returns FALSE for any value that contains no uppercase letters', () => {
+   expect(contains.uppercaseLetters(burmese)).toEqual(false);
    expect(contains.uppercaseLetters(decimal)).toEqual(false);
    expect(contains.uppercaseLetters(emptyString)).toEqual(false);
    expect(contains.uppercaseLetters(englishLetters)).toEqual(false);
@@ -299,4 +346,5 @@ test('uppercaseLetters() returns FALSE for any value that contains no uppercase 
    expect(contains.uppercaseLetters(onlyRussianLowercaseLetters)).toEqual(false);
    expect(contains.uppercaseLetters(russianLetters)).toEqual(false);
    expect(contains.uppercaseLetters(specialCharacters)).toEqual(false);
+   expect(contains.uppercaseLetters(umlautLowercase)).toEqual(false);
 });

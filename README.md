@@ -54,7 +54,7 @@ Similarly, non-ASCII characters can absolutely be in domain names. So restricing
 
 ## Methodology
 
-This utility works by checking characters against a far more expansive set of Regex patterns. These patterns identify the range of _letters_ that exist far outside the normal ASCII range. This, in turn, properly identifies letters from most languages.
+This utility works by using the `Letter` and `Mark` RegEx Unicode character classes.
 
 ## Usage
 

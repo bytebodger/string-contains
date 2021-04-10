@@ -1,6 +1,6 @@
 {
   "name": "@toolz/string-contains",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A string-inspection utility that is mindful of international (i.e. non-ASCII) letters",
   "keywords": [
     "string",
@@ -14,7 +14,7 @@
   ],
   "homepage": "https://github.com/bytebodger/string-contains",
   "bugs": {
-    "email": "adam.davis@hashverify.com",
+    "email": "me@adamdavis․codes",
     "url": "https://github.com/bytebodger/string-contains/issues"
   },
   "main": "src/contains.js",
@@ -25,7 +25,7 @@
     "type": "git",
     "url": "https://github.com/bytebodger/string-contains.git"
   },
-  "author": "Adam Nathaniel Davis <adam.davis@hashverify.com> (https://writing.voyage)",
+  "author": "Adam Nathaniel Davis <me@adamdavis․codes> (https://adamdavis.codes)",
   "license": "MIT",
   "private": false,
   "publishConfig": {
